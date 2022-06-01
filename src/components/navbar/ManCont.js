@@ -1,3 +1,5 @@
+import React from 'react';
+import '../../App.css'
 import {
   Button,
   FormControl,
@@ -22,12 +24,45 @@ import GA from "../img&Logos/GroupArrow.png";
 import view from "../../view.png";
 import pencil from "../../pencil.png";
 import del from "../../deleteB.png";
+import ReactPaginate from 'react-paginate';
+import right from '../img&Logos/rightArrow.png'
 
 function ManCont() {
+
+    const[users , setUsers ] = React.useState(forms.slice(0, 20));
+    const[pageNumber , setPageNumber] = React.useState(0)
+
+    const usersPerPage = 10;
+    const pageVisited = pageNumber * usersPerPage
+
+    const displayData = users.slice(pageVisited, pageVisited + usersPerPage).map((data)=>{
+        return(
+          <TableRow>
+          <TableCell  >{data.id}</TableCell>
+          <TableCell >{data.name}</TableCell>
+          <TableCell >{data.CONT}</TableCell>
+          <TableCell > {data.Phone}</TableCell>
+          <TableCell >{data.email}</TableCell>
+          <TableCell >{data.address}</TableCell>
+          <TableCell>
+                    <img src={view} alt="" />
+                    <img src={pencil} alt="" style={{marginLeft:'10px'}}className="view_icon" />
+                    <img src={del} alt="" style={{marginLeft:'10px'}} className="view_icon" />
+                  </TableCell>
+          </TableRow>
+        )
+    });
+
+    const pageCount = Math.ceil(users.length/usersPerPage);
+
+    const pageChange = ({selected}) =>{
+        setPageNumber(selected);
+    }
+
   return (
     <div className="content" style={{ overflow: "hidden" }}>
       <div className="C_heading">
-        <h2
+        <h2 
           style={{
             marginTop: "10px",
             width: "1880px",
@@ -45,8 +80,8 @@ function ManCont() {
       </div>
       <Grid container spacing={5}>
         <div className="fields">
-          <Grid className="options" style={{ marginLeft: "10px" }}>
-            <select className="sel" style={{ border: "disabled" }}>
+          <Grid className="select" style={{ marginLeft: "10px" }}>
+            <select className="select_ins" style={{ border: "disabled" }}>
               <option placeholder="Select Role">Select Role</option>
               <option value="Manager">Manager</option>
               <option value="Developers">Developers</option>
@@ -100,20 +135,20 @@ function ManCont() {
         </div>
       </Grid>
 
-      <div className="mc_form">
-        <TableContainer component={Paper}>
-        <div>
-          <Table sx={{ minWidth:500 }} size="medium">
-            <TableHead style={{backgroundColor:'#F4F9FB'}} >
+      <div className="form">
+      
+    
+          <Table stickyHeader >
+            <TableHead style={{background:'transparent'}} >
               <TableRow>
                
-                <TableCell className="sno">S.No</TableCell>
+                <TableCell style={{width:'2px'}}>S.No</TableCell>
                 <TableCell className="thead">
                   Full Name
                   <img
                     src={GA}
                     alt=""
-                    style={{ position: "absolute", left: "290px", top: "20px" }}
+                    style={{ position: "absolute", left: "150px", top: "20px" }}
                     className="groupArrow"
                   />
                 </TableCell>
@@ -122,7 +157,7 @@ function ManCont() {
                   <img
                     src={GA}
                     alt=""
-                    style={{ position: "absolute", left: "550px", top: "20px" }}
+                    style={{ position: "absolute", left: "120px", top: "20px" }}
                     className="groupArrow"
                   />
                 </TableCell>
@@ -131,7 +166,7 @@ function ManCont() {
                   <img
                     src={GA}
                     alt=""
-                    style={{ position: "absolute", left: "800px", top: "20px" }}
+                    style={{ position: "absolute", left: "140px", top: "20px" }}
                     className="groupArrow"
                   />
                 </TableCell>
@@ -142,7 +177,7 @@ function ManCont() {
                     alt=""
                     style={{
                       position: "absolute",
-                      left: "1150px",
+                      left: "200px",
                       top: "20px",
                     }}
                     className="groupArrow"
@@ -156,7 +191,7 @@ function ManCont() {
                     alt=""
                     style={{
                       position: "absolute",
-                      left: "1460px",
+                      left: "200px",
                       top: "20px",
                     }}
                     className="groupArrow"
@@ -166,35 +201,29 @@ function ManCont() {
 
               </TableRow>
             </TableHead>
-            <TableBody >
-              {forms.map((data) => (
-                <TableRow >
-                  <TableCell  >{data.id}</TableCell>
-                  <TableCell >{data.name}</TableCell>
-                  <TableCell >{data.CONT}</TableCell>
-                  <TableCell > {data.Phone}</TableCell>
-                  <TableCell >{data.email}</TableCell>
-                  <TableCell >{data.address}</TableCell>
-                  <TableCell>
-                    <img src={view} alt="" />
-                    <img src={pencil} alt="" style={{marginLeft:'10px'}}className="view_icon" />
-                    <img src={del} alt="" style={{marginLeft:'10px'}} className="view_icon" />
-                  </TableCell>
-             
-                </TableRow>
-              ))}
-             
-            </TableBody>
+            <TableBody style={{background:'white'}}>{displayData}</TableBody>
+         
           </Table>
-          </div>
-          <TablePagination style={{position:'absolute' , left:'1280px'}}
-              rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-              colSpan={3}        
-            />
-
+      
+        
           
-        </TableContainer>
+     
       </div>
+      
+       <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          pageCount={pageCount}
+         
+          onPageChange={pageChange}
+          containerClassName={"paginationBttns"}
+          previousLinkClassName={"previousBttn"}
+          nextLinkClassName={"nextBttn"}
+          disabledClassName={"paginationDisabled"}
+          activeClassName={"paginationActive"}
+       />
+ 
+      
   
     </div>
   );

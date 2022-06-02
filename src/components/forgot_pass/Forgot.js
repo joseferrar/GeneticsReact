@@ -1,20 +1,25 @@
+import React from "react";
 import { Grid, Button, InputBase} from "@material-ui/core";
 import icon from './mailicon.png'
 
 import './Forgot.css'
+import { useHistory } from "react-router-dom";
+
 
 
 function Forgot() {
 
+        
+  
+
+     
     
 
-    const submitClick = () =>{
-    
-    }
 
     return(
+  
         <div className="forgotForm">
-            <h2 style={{
+           <h2 style={{
               position: "absolute",
               width: "211px",
               left: "139px",
@@ -44,9 +49,13 @@ function Forgot() {
           </Grid>
 
           <Grid className="button1">
-            <Button className="butt1" onClick={submitClick}>Submit</Button>
+            <Button className="butt1" onClick="history.back()">Submit</Button>
           </Grid>
+
+          
         </div>
+
+        
     )
     
 }

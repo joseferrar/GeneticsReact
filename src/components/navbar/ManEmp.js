@@ -32,9 +32,11 @@ function ManEmp() {
                 <TableCell className="statuss" ><div className='status' style={{background:data.background}}><div style={{left:"10px", position:'relative', top:'2px' , color:'white'}}>{data.status}</div></div></TableCell>
             
                 <TableCell>
+                  <div style={{textAlign:"center"}}>
                     <img src={view} alt="" />
                     <img src={pencil} alt="" style={{marginLeft:'10px'}}className="view_icon" />
                     <img src={del} alt="" style={{marginLeft:'10px'}} className="view_icon" />
+                  </div>
                   </TableCell>
             </TableRow>
         )
@@ -157,7 +159,7 @@ function ManEmp() {
 
                <TableCell style={{marginRight:'180px'}} className="thead">Status</TableCell>
 
-               <TableCell style={{marginRight:'180px'}} className="thead">Actions</TableCell>
+               <TableCell style={{textAlign:"center"}} className="thead">Actions</TableCell>
 
              </TableRow>
             </TableHead>

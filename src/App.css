@@ -204,3 +204,55 @@ text-align: center !important;
     color: white;
 }
 
+.paginationBttns{
+    
+    position:absolute;
+    top: 700px;
+    left: 1670px;
+    width: 130px;
+    height: 24px;
+    list-style: none;
+    display: flex;
+ 
+    
+
+}
+
+.paginationBttns a {
+    padding: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin: 8px;
+    border-radius: 25px;
+    border:0px solid grey;  
+    cursor:pointer;
+}
+
+.paginationBttns a:hover{
+    color:white;
+    background-color:grey ;
+}
+
+.paginationActive a{
+    color:white;
+    background-color: #207EA9;
+
+}
+
+.CustomContent {
+    position: absolute;
+    width: 1880px;
+    height: 755px;
+    left: 20px;
+    top: 140px;
+    margin: -10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px 1px rgb(206, 206, 206);
+    overflow-x: scroll;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.CustomForm_box{
+    
+}

@@ -50,7 +50,7 @@ function Login() {
         {forgot ? (
           <Forgot />
         ) : (
-          <div className="form">
+          <div className="form1">
             <h2
               style={{
                 position: "absolute",
@@ -137,7 +137,7 @@ function Login() {
               </a>
             </div>
             <Grid className="button">
-              <Button className="butt">Sign in</Button>
+              <Button className="butt" href="/nav">Sign in</Button>
             </Grid>
           </div>
         )}

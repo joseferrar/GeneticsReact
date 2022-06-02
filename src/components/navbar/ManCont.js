@@ -109,6 +109,7 @@ function ManCont() {
           </Grid>
           <Grid className="email" style={{ marginLeft: "70px" }}>
             <InputBase
+              type='email'
               placeholder="Email Address"
               style={{ left: "30px" }}
               className="email_field"

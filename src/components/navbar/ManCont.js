@@ -26,8 +26,17 @@ import pencil from "../../pencil.png";
 import del from "../../deleteB.png";
 import ReactPaginate from 'react-paginate';
 import right from '../img&Logos/rightArrow.png'
+import AddContractor from '../Add/AddContractor';
 
 function ManCont() {
+
+      const [add , setAdd] = React.useState(false);
+
+      const  addClick = () =>{
+        setAdd(true);
+      
+      }
+
 
     const[users , setUsers ] = React.useState(forms.slice(0, 20));
     const[pageNumber , setPageNumber] = React.useState(0)
@@ -60,7 +69,11 @@ function ManCont() {
     }
 
   return (
+    <div>
+      {add ? (<AddContractor/>)  : (
+        
     <div className="content" style={{ overflow: "hidden" }}>
+    
       <div className="C_heading">
         <h2 
           style={{
@@ -129,12 +142,14 @@ function ManCont() {
           </Grid>
 
           <Grid className="button03" style={{ marginLeft: "150px" }}>
-            <Button className="button03_field" style={{ color: "white" }}>
+            <Button className="button03_field" style={{ color: "white" }} onClick={addClick}>
               Add Now
             </Button>
           </Grid>
         </div>
       </Grid>
+
+      
 
       <div className="form">
       
@@ -210,6 +225,8 @@ function ManCont() {
           
      
       </div>
+   
+
       
        <ReactPaginate
           previousLabel={"<"}
@@ -223,8 +240,10 @@ function ManCont() {
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActive"}
        />
- 
-      
+      </div>
+  
+      )}
+     
   
     </div>
   );

@@ -3,8 +3,13 @@ import { Grid , InputBase , Button , Table , TableRow , TableCell , TableHead , 
 import "../../App.css"
 
 
+
 function AddContractor() {
     return ( 
+     
+
+      <div>
+    
         <div className='content'>
             <div className="C_heading">
         <h2 
@@ -23,7 +28,20 @@ function AddContractor() {
           </div>
         </h2>
       </div>
+
+          <div className='rectangleBox'>
+            <div className='Hlabel'>
+              <label >Basic Information</label>
+            </div>
+          </div>
+
+          <div className='addNewForm'>
+            <Grid>
+              
+            </Grid>
+          </div>
         </div>
+      </div>
      );
 }
 

@@ -7,12 +7,15 @@ import view from '../../view.png'
 import pencil from '../../pencil.png'
 import del from '../../deleteB.png'
 import ReactPaginate from 'react-paginate';
+import AddLabs from '../Add/AddLabs';
 
 function ManLab() {
 
 
     const[datas , setdatas] = React.useState(Lforms.slice(0,20));
     const[pageNumber , setPageNumber] = React.useState(0);
+
+    const [addLab , setAddLab] = React.useState(false);
 
     const datasPerPage = 10;
     const pageVisited =pageNumber * datasPerPage;
@@ -44,7 +47,14 @@ function ManLab() {
         setPageNumber(selected);
     }
 
+    const addLabClick = () =>{
+      setAddLab(true)
+    }
+
     return ( 
+
+      <div>
+        {addLab ? (<AddLabs/>) : (
         <div className="content">
          <div className="C_heading">
         <h2 
@@ -105,7 +115,7 @@ function ManLab() {
           </Grid>
 
           <Grid className="button03" style={{ marginLeft: "150px" }}>
-            <Button className="button03_field" style={{ color: "white" }}>
+            <Button className="button03_field" style={{ color: "white" }} onClick={addLabClick}>
               Add Now
             </Button>
           </Grid>
@@ -206,6 +216,8 @@ function ManLab() {
              activeClassName={"paginationActive"}   
         />
 
+        </div>
+        )}
         </div>
      );
 }

@@ -26,6 +26,7 @@ function ManFor() {
 
   return (  
       <div>
+        {CustForm ? (<CustomForm/>) : (
     <div className="content">
       <div className="C_heading">
         <h2
@@ -115,11 +116,11 @@ function ManFor() {
       </Grid>
 
     </div>
-    
-    <div>
-    {CustForm ? <CustomForm/> : null}
+    )}
 
-</div>
+    
+
+
 </div>
   );
 }

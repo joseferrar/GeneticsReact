@@ -8,6 +8,7 @@ import view from '../../view.png'
 import pencil from '../../pencil.png'
 import del from '../../deleteB.png'
 import { height } from '@mui/system'
+import AddEmployee from '../Add/AddEmployee'
 
 
 
@@ -15,6 +16,8 @@ function ManEmp() {
 
     const[datas , setdatas] = React.useState(Eforms.slice(0,20));
     const[pageNumber , setPageNumber] = React.useState(0);
+    const[addEmp , setAddEmp] = React.useState(false);
+
 
     const datasPerPage = 10;
     const pageVisited =pageNumber * datasPerPage;
@@ -48,7 +51,13 @@ function ManEmp() {
         setPageNumber(selected);
     }
 
+    const ClickAdd = () =>{
+      setAddEmp(true);
+    }
+
   return (
+    <div>
+       {addEmp ? (<AddEmployee/>) : (
     <div className="content">
       <div className="E_heading">
         <h2
@@ -90,7 +99,7 @@ function ManEmp() {
           </Grid>
 
           <Grid className="button03" style={{ marginLeft: "150px" }}>
-            <Button className="button03_field" style={{ color: "white" }}>
+            <Button className="button03_field" style={{ color: "white" }} onClick={ClickAdd}>
               Add Now
             </Button>
           </Grid>
@@ -178,17 +187,14 @@ function ManEmp() {
             nextLinkClassName={"nextBttn"}
             disabledClassName={"paginationDisabled"}
             activeClassName={"paginationActive"}
-            
-        
-        
-        
-        
         />
 
 
 
 
 
+    </div>
+)}
 
     </div>
   );

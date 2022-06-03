@@ -4,7 +4,7 @@ import CF_image from "../img&Logos/CF_image.png";
 
 function CustomForm() {
     return (  
-        <div className="CustomContent">
+        <div className="content">
              <div className="C_heading">
         <h2
           style={{

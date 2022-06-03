@@ -3,14 +3,10 @@ import { Grid , InputBase , Button , Table , TableRow , TableCell , TableHead , 
 import "../../App.css"
 
 
-
-function AddContractor() {
+function AddEmployee() {
     return ( 
-     
-
-      <div className='AddContractor'>
-    
-        <div className='content'>
+        <div className="Addemp">
+            <div className='content'>
             <div className="C_heading">
         <h2 
           style={{
@@ -24,7 +20,7 @@ function AddContractor() {
           <div
             style={{ marginLeft: "25px", position: "relative", top: "-7px" }}
           >
-            Add New Contractor
+            Add New Genetix Employee
           </div>
         </h2>
       </div>
@@ -38,7 +34,7 @@ function AddContractor() {
             <Grid container spacing={3}>
                 <div className='name' style={{position:'absolute',left:'40px', top:"140px"}}>
                   <div className='label' style={{ position:"absolute",width:"82px",top:"20px"}}>
-                      <label>Full Name</label>
+                      <label>Employee Name</label>
                   </div>
                   <div className='namee' style={{top:"5px", left:"180px"}}>
                       <InputBase className='namefield' style={{left:"30px"}}/>
@@ -47,7 +43,7 @@ function AddContractor() {
 
                 <div className='con_id' style={{position:'absolute',left:'40px', top:"220px"}}>
                   <div className='label' style={{ position:"absolute",width:"110px",top:"20px"}}>
-                      <label>Contractor Id</label>
+                      <label>Mobile Number</label>
                   </div>
                   <div className='namee' style={{top:"5px", left:"180px"}}>
                       <InputBase className='namefield' style={{left:"30px"}}/>
@@ -63,7 +59,60 @@ function AddContractor() {
                   </div>
                 </div>
 
-                <div className='City' style={{position:'absolute',left:'40px', top:"450px"}}>
+                <div className='zip_code' style={{position:'absolute',left:'40px', top:"450px"}}>
+                  <div className='label' style={{ position:"absolute",width:"110px",top:"20px"}}>
+                      <label>Zip Code</label>
+                  </div>
+                  <div className='namee' style={{top:"5px", left:"180px"}}>
+                      <InputBase className='namefield' style={{left:"30px"}}/>
+                  </div>
+                </div>
+
+                <div className='status' style={{position:'absolute',left:'40px', top:"530px"}}>
+                  <div className='label' style={{ position:"absolute",width:"110px",top:"20px"}}>
+                      <label>Status</label>
+                  </div>
+                  <div className='select' style={{left:"180px", top:"10px"}}>
+                  <select
+                        placeholder="ID"
+                        style={{ left: "30px" , fontWeight:"800"}}
+                        className="select_ins"
+                        >
+                          <option placeholder="ID">Active</option>
+                          <option value="001">Inactive</option>
+                        
+                        </select>    
+                  </div>
+                  </div>
+
+                 
+
+                
+      
+            </Grid>
+            </div>
+
+            <div className='right_sideform' style={{position:"absolute" , left:"1200px", top:"1px"}}>
+            <Grid container spacing={3}>
+                <div className='Emp_num' style={{position:'absolute',left:'40px', top:"140px"}}>
+                  <div className='label' style={{ position:"absolute",width:"153px",top:"20px"}}>
+                      <label>Employee Number</label>
+                  </div>
+                  <div className='namee' style={{top:"5px", left:"180px"}}>
+                      <InputBase className='namefield' style={{left:"30px"}}/>
+                  </div>
+                </div>
+
+                <div className='email_address' style={{position:'absolute',left:'40px', top:"220px"}}>
+                  <div className='label' style={{ position:"absolute",width:"118px",top:"20px"}}>
+                      <label>Email Address</label>
+                  </div>
+                  <div className='namee' style={{top:"5px", left:"180px"}}>
+                      <InputBase className='namefield' style={{left:"30px"}}/>
+                  </div>
+                </div>
+
+                <div className='City' style={{position:'absolute',left:'40px', top:"297px"}}>
                   <div className='label' style={{ position:"absolute",width:"110px",top:"20px"}}>
                       <label>City</label>
                   </div>
@@ -81,57 +130,7 @@ function AddContractor() {
                   </div>
                   </div>
 
-                  <div className='zip_code' style={{position:'absolute',left:'40px', top:"530px"}}>
-                  <div className='label' style={{ position:"absolute",width:"110px",top:"20px"}}>
-                      <label>Zip Code</label>
-                  </div>
-                  <div className='namee' style={{top:"5px", left:"180px"}}>
-                      <InputBase className='namefield' style={{left:"30px"}}/>
-                  </div>
-                </div>
-
-                <div className='part_name' style={{position:'absolute',left:'40px', top:"600px"}}>
-                  <div className='label' style={{ position:"absolute",width:"116px",top:"20px"}}>
-                      <label>Partner Name</label>
-                  </div>
-                  <div className='namee' style={{top:"5px", left:"180px"}}>
-                      <InputBase className='namefield' style={{left:"30px"}}/>
-                  </div>
-                </div>
-      
-            </Grid>
-            </div>
-
-            <div className='right_sideform' style={{position:"absolute" , left:"1200px", top:"1px"}}>
-            <Grid container spacing={3}>
-                <div className='phar_name' style={{position:'absolute',left:'40px', top:"140px"}}>
-                  <div className='label' style={{ position:"absolute",width:"135px",top:"20px"}}>
-                      <label>Pharmacy Name</label>
-                  </div>
-                  <div className='namee' style={{top:"5px", left:"180px"}}>
-                      <InputBase className='namefield' style={{left:"30px"}}/>
-                  </div>
-                </div>
-
-                <div className='email_address' style={{position:'absolute',left:'40px', top:"220px"}}>
-                  <div className='label' style={{ position:"absolute",width:"118px",top:"20px"}}>
-                      <label>Email Address</label>
-                  </div>
-                  <div className='namee' style={{top:"5px", left:"180px"}}>
-                      <InputBase className='namefield' style={{left:"30px"}}/>
-                  </div>
-                </div>
-
-                <div className='Phone_num' style={{position:'absolute',left:'40px', top:"300px"}}>
-                  <div className='label' style={{ position:"absolute",width:"126px",top:"20px"}}>
-                      <label>Phone Number</label>
-                  </div>
-                  <div className='namee' style={{top:"5px", left:"180px", }}>
-                      <InputBase className='namefield' style={{left:"30px",}}/>
-                  </div>
-                </div>
-
-                <div className='user_name' style={{position:'absolute',left:'40px', top:"378px"}}>
+                <div className='user_name' style={{position:'absolute',left:'40px', top:"470px"}}>
                   <div className='label' style={{ position:"absolute",width:"122px",top:"20px"}}>
                       <label>User Name</label>
                   </div>
@@ -141,7 +140,7 @@ function AddContractor() {
                 </div>
 
 
-                <div className='State' style={{position:'absolute',left:'40px', top:"450px"}}>
+                <div className='State' style={{position:'absolute',left:'40px', top:"382px"}}>
                   <div className='label' style={{ position:"absolute",width:"110px",top:"20px"}}>
                       <label>State</label>
                   </div>
@@ -159,33 +158,23 @@ function AddContractor() {
                   </div>
                   </div>
 
-                  <div className='NCPA_member' style={{position:'absolute',left:'40px', top:"530px"}}>
-                  <div className='label' style={{ position:"absolute",width:"130px",top:"20px"}}>
-                      <label>NCPA Member?</label>
+                  <div className='Select Role' style={{position:'absolute',left:'40px', top:"544px"}}>
+                  <div className='label' style={{ position:"absolute",width:"110px",top:"20px"}}>
+                      <label>Select Role</label>
                   </div>
-                  <div className='radio' >
-                    <FormControl>
-                    <RadioGroup
-                          defaultValue="yes"
-                     >
-                     <div className='radio_butt'>  
-                     <FormControlLabel value="Yes" control={<Radio/>} label="Yes"/>
-                     <FormControlLabel value="No" control={<Radio/>} label="No"/> 
-                     </div>
+                  <div className='select' style={{left:"180px", top:"10px"}}>
+                  <select
+                        placeholder="ID"
+                        style={{ left: "30px" , fontWeight:"800"}}
+                        className="select_ins"
+                        >
+                          <option placeholder="ID">Can Edit</option>
+                          <option value="001">Can View</option>
+                        </select>    
+                  </div>
+                  </div>
 
-                     </RadioGroup>
-                     </FormControl>
-                  </div>
-                </div>
-
-                <div className='part_id' style={{position:'absolute',left:'40px', top:"600px"}}>
-                  <div className='label' style={{ position:"absolute",width:"116px",top:"20px"}}>
-                      <label>Partner Id</label>
-                  </div>
-                  <div className='namee' style={{top:"5px", left:"180px"}}>
-                      <InputBase className='namefield' style={{left:"30px"}}/>
-                  </div>
-                </div>            
+                  
 
             </Grid>
             </div>
@@ -204,12 +193,9 @@ function AddContractor() {
           </Grid>
             </Grid>
 
-
-          
         </div>
         </div>
-     
      );
 }
 
-export default AddContractor;
+export default AddEmployee;

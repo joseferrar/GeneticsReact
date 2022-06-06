@@ -295,3 +295,11 @@ text-align: center !important;
     top:11px;
     display: flex;
 }
+
+.MuiGrid-spacing-xs-3 > .MuiGrid-item {
+    padding-bottom: 634px;
+    padding-top: 231px;
+    padding-bottom: 265px;
+    height: 400px;
+    padding: 4px;
+}

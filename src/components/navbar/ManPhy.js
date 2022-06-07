@@ -16,6 +16,7 @@ import pencil from "../../pencil.png";
 import del from "../../deleteB.png";
 import ReactPaginate from "react-paginate";
 import AddContractor from "../Add/AddContractor";
+import PhyDetails from "../Details/PhyDetails";
 
 function ManPhy() {
   const [addPhy, setAddPhy] = React.useState(false);
@@ -75,9 +76,10 @@ function ManPhy() {
 
   return (
     <div>
-      {addPhy || detail ? (
-        
+      {addPhy ? (
         <AddContractor addPhy={addPhy} setAddPhy={setAddPhy} />
+      ) : detail ? (
+        <PhyDetails />
       ) : (
         <div className="content">
           <div className="E_heading">
